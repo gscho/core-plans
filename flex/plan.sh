@@ -16,6 +16,12 @@ do_check() {
   make check LDFLAGS="$LDFLAGS -lstdc++"
 }
 
+do_build() {
+  CFLAGS="${CFLAGS} -D_GNU_SOURCE"
+
+  do_default_build
+}
+
 do_install() {
   do_default_install
 
